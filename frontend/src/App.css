@@ -1,0 +1,78 @@
+/* Default Light Mode */
+.App {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+/* Header Flexbox for Proper Alignment */
+.header-container {
+  display: flex;
+  justify-content: center; /* Center the title */
+  align-items: center;
+  position: relative; /* Allows absolute positioning of the toggle */
+  padding: 10px 20px;
+}
+
+/* Toggle Button - Left Side */
+.toggle-btn {
+  position: absolute;
+  left: 20px; /* Move it to the left */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Add a little animation */
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Response Container */
+.response-container {
+  background-color: #f8f9fa; /* Light background in light mode */
+  color: black; /* Default text color */
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+/* Dark Mode Fix - Adjust Background for Visibility */
+.dark-mode .response-container {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+  color: white; /* Ensure text is visible */
+}
+
+/* Response Title */
+.response-container h5 {
+  color: inherit; /* Keeps original color */
+  font-weight: bold;
+}
+
+/* Usage Statistics */
+.usage-container {
+  background-color: #e3e3e3; /* Light background */
+  color: black;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+/* Dark Mode Fix for Usage Statistics */
+.dark-mode .usage-container {
+  background-color: rgba(255, 255, 255, 0.1); /* Lighter background */
+  color: white; /* Keep text visible */
+}
