@@ -1,70 +1,171 @@
-# Getting Started with Create React App
+# 🚀 Collaborative Code Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, real-time collaborative code editor built with React.js and Socket.IO. Features a sleek VS Code-inspired interface with multi-user editing capabilities.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- 🎨 **Modern Interface**: Clean, professional design inspired by VS Code
+- 👥 **Real-time Collaboration**: Multiple users can edit code simultaneously
+- 🎯 **Live Cursors**: See where other users are typing in real-time
+- 📁 **File Explorer**: Navigate through project files with ease
+- 🌈 **Syntax Highlighting**: Support for multiple programming languages
+- 💾 **Auto-sync**: Changes are automatically synchronized across all users
+- 📱 **Responsive Design**: Works great on desktop and mobile devices
+- 🔧 **Multiple Languages**: JavaScript, TypeScript, Python, Java, C++, HTML, CSS, JSON
 
-### `npm start`
+## 🛠️ Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React.js, Monaco Editor
+- **Backend**: Node.js, Express, Socket.IO
+- **Styling**: CSS3 with modern design principles
+- **Icons**: Lucide React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Start the development environment**
+   ```bash
+   npm run dev
+   ```
+   This will start both the React development server (port 3000) and the Socket.IO server (port 5000).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Open your browser**
+   - Navigate to `http://localhost:3000`
+   - Open multiple tabs to see real-time collaboration in action!
 
-### `npm run eject`
+### Alternative: Run Separately
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you prefer to run the client and server separately:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Terminal 1 - Start the server
+npm run server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Terminal 2 - Start the React app
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📖 Usage
 
-## Learn More
+### Basic Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Open the editor** in your browser
+2. **Start coding** - begin typing in the Monaco editor
+3. **Share the link** - copy the URL and share it with collaborators
+4. **Collaborate** - watch as multiple users edit code in real-time
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Features Walkthrough
 
-### Code Splitting
+- **File Management**: Use the file explorer on the left to navigate files
+- **Language Selection**: Choose your programming language from the dropdown
+- **User Awareness**: See active users in the right panel
+- **Save & Run**: Use the toolbar buttons to save or run your code
+- **Real-time Sync**: All changes are automatically synchronized
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Keyboard Shortcuts
 
-### Analyzing the Bundle Size
+- `Ctrl+S` - Save file
+- `F5` - Run code
+- `Ctrl+/` - Toggle comment
+- `Ctrl+D` - Select next occurrence
+- `Alt+Up/Down` - Move line up/down
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🏗️ Project Structure
 
-### Making a Progressive Web App
+```
+collaborative-code-editor/
+├── src/
+│   ├── components/
+│   │   ├── CodeEditor.js      # Monaco editor wrapper
+│   │   ├── UsersList.js       # Active users panel
+│   │   └── FileExplorer.js    # File navigation
+│   ├── App.js                 # Main application component
+│   ├── App.css                # Styling
+│   └── index.js               # React entry point
+├── server.js                  # Socket.IO server
+├── package.json               # Dependencies and scripts
+└── README.md                  # This file
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🎨 Customization
 
-### Advanced Configuration
+### Themes
+The editor uses VS Code's dark theme by default. You can customize colors in `src/App.css`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```css
+:root {
+  --primary-color: #4F46E5;    /* Primary purple */
+  --success-color: #10B981;    /* Success green */
+  --warning-color: #F59E0B;    /* Warning orange */
+  --background: #1e1e1e;       /* Main background */
+}
+```
 
-### Deployment
+### Adding Languages
+To add support for new programming languages, update the language options in `src/App.js`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```javascript
+<option value="rust">Rust</option>
+<option value="go">Go</option>
+<option value="php">PHP</option>
+```
 
-### `npm run build` fails to minify
+## 🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Deploy to Production
+
+```bash
+npm run build:deploy
+```
+
+This builds the React app and starts the production server.
+
+## 📝 Development
+
+### Available Scripts
+
+- `npm start` - Runs React development server
+- `npm run server` - Starts Socket.IO server only
+- `npm run dev` - Runs both client and server concurrently
+- `npm run build` - Builds for production
+- `npm test` - Runs tests
+
+## 🚀 Performance Optimizations
+
+- **Debounced Updates**: Code changes are debounced to reduce server load
+- **Efficient Rendering**: React optimizations prevent unnecessary re-renders
+- **Memory Management**: Automatic cleanup of disconnected users
+- **Responsive Design**: Mobile-optimized interface
+
+## 🤝 Support
+
+If you encounter any issues:
+1. Check the browser console for errors
+2. Ensure both client and server are running
+3. Verify Socket.IO connection in Network tab
+4. Try refreshing the page
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+---
+
+**Happy Coding! 🎯**
